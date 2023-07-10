@@ -2,12 +2,12 @@ pipeline {
     agent any
 
     environment {
-        registry = "211223789150.dkr.ecr.us-east-1.amazonaws.com/my-docker-repo"
+        registry = "191327398744.dkr.ecr.us-west-2.amazonaws.com/my-docker"
     }
     stages {
         stage('Checkout') {
             steps {
-                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/akannan1087/docker-spring-boot']])
+               checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Nehalnarnaware/docker-spring-boot-EKS.git']])
             }
         }
         
