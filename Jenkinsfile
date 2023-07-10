@@ -39,7 +39,7 @@ pipeline {
             steps {
                 script{
                      sh "helm upgrade first --install mychart --namespace helm-deployment --set image.tag=$BUILD_NUMBER"
-                  
+                 }
                 }
             }
                 
