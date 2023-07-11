@@ -51,8 +51,7 @@ pipeline {
         stage ('Helm Deploy') {
           steps {
             script {
-                sh "eksctl create cluster --name demo-eks-$BUILD_NUMBER --region us-west-2 --nodegroup-name my-nodes --node-type t3.small --managed --nodes 2"
-                sh "kubectl create ns helm-deployment-$BUILD_NUMBER"
+              
                 sh "helm upgrade first --install mychart --namespace helm-deployment-$BUILD_NUMBER --set image.tag=$BUILD_NUMBER"
                 }
             }
